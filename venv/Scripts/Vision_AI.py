@@ -4,6 +4,8 @@ import csv
 from google.cloud import vision
 from google.cloud.vision import types
 
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="CodeJam2019-b0d394660f96.json"
+
 #Using Google Vision API
 client = vision.ImageAnnotatorClient()
 
@@ -40,3 +42,4 @@ with open("output.csv", "w", newline='') as csvFile:
         print('{} (confidence: {})'.format(object_.name, object_.score))
 
 csvFile.close()
+
